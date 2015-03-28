@@ -26,7 +26,7 @@ string = request.read().decode('utf-8')
 # convert string to json so python can manipulate better
 json_obj = json.loads(string)['torrents']
 
-# for each torrent in the json object, check if it is finished and delete if so.
+# for each torrent in the json object, check if it is finished and delete if so
 for torrent in json_obj:
     finished_parse = str(torrent).find("100.0 %")
     if finished_parse != -1:
