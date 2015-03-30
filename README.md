@@ -8,4 +8,4 @@ Set authentication to use: admin / admin.
 Run program with pythonw.exe to hide console window. (example: c:\program files\python\pythonw.exe)
 Set program to run - Advanced > Run Program > Run this program when a torrent finishes. (example: c:\pythonw.exe remover.py)
 
-Tested and works on uTorrentPro 3.4.2 (build 38397)
+Tested and works on uTorrentPro 3.4.2 (build 38397).
