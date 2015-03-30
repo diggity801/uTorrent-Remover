@@ -11,7 +11,7 @@ username = 'admin'
 password = 'admin'
 match = None
 
-# initialize password manager, http handler and opener
+# initialize password manager, http authentication handler and opener
 password_mgr = urllib.request.HTTPPasswordMgrWithDefaultRealm()
 password_mgr.add_password(None, url, username, password)
 handler = urllib.request.HTTPBasicAuthHandler(password_mgr)
