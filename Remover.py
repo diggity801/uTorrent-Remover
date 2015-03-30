@@ -6,12 +6,12 @@ import json
 
 # set variables to connect to uTorrent web UI
 port = 8080
-url = "http://localhost:" + port + "/gui/?list=1"
+url = "http://localhost:" + str(port) + "/gui/?list=1"
 username = 'admin'
 password = 'admin'
 match = None
 
-# initialize password manager, http authentication handler and opener
+# initialize password manager, http handler and opener
 password_mgr = urllib.request.HTTPPasswordMgrWithDefaultRealm()
 password_mgr.add_password(None, url, username, password)
 handler = urllib.request.HTTPBasicAuthHandler(password_mgr)
@@ -23,7 +23,7 @@ request = opener.open(url)
 # convert data to string in 'utf-8' format so can be converted to json.
 string = request.read().decode('utf-8')
 
-# convert string to json so python can manipulate better
+# parse json string and return json object using the torrents keys to narrow object to just torrents
 json_obj = json.loads(string)['torrents']
 
 # for each torrent in the json object, check if it is finished and delete if so
