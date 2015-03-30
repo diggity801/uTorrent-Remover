@@ -33,3 +33,4 @@ for torrent in json_obj:
         match = torrent[0].strip("'")
     if match != None:
         remove = opener.open("http://localhost:" + port + "/gui/?action=remove&hash=" + match)
+ 
