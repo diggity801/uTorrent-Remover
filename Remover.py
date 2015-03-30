@@ -5,8 +5,8 @@ import urllib.request
 import json
 
 # set variables to connect to uTorrent web UI
-url = "http://localhost:8080/gui/?list=1"
 port = 8080
+url = "http://localhost:" + port + "/gui/?list=1"
 username = 'admin'
 password = 'admin'
 match = None
