@@ -21,10 +21,10 @@ opener = urllib.request.build_opener(handler)
 request = opener.open(url)
 
 # convert data to string in 'utf-8' format so can be converted to json
-string = request.read().decode('utf-8')
+str = request.read().decode('utf-8')
 
 # parse json string and return json object using 'torrents' index to narrow object to just torrents
-json_obj = json.loads(string)['torrents']
+json_obj = json.loads(str)['torrents']
 
 # for each torrent in the json object, check if it is finished and delete if so
 for torrent in json_obj:
