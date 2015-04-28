@@ -23,7 +23,7 @@ request = opener.open(url)
 # convert data to string in 'utf-8' format so can be converted to json
 string = request.read().decode('utf-8')
 
-# parse json string and return json object using the torrents keys to narrow object to just torrents
+# parse json string and return json object using 'torrents' index to narrow object to just torrents
 json_obj = json.loads(string)['torrents']
 
 # for each torrent in the json object, check if it is finished and delete if so
