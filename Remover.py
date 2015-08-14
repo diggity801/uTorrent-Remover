@@ -21,10 +21,10 @@ opener = urllib.request.build_opener(handler)
 request = opener.open(url)
 
 # convert data to string in 'utf-8' format so can be converted to json
-str = request.read().decode('utf-8')
+str_obj = request.read().decode('utf-8')
 
 # parse json string and return json object using 'torrents' index to narrow object to just torrents
-json_obj = json.loads(str)['torrents']
+json_obj = json.loads(str_obj)['torrents']
 
 # for each torrent in the json object, check if it is finished and delete if so
 for torrent in json_obj:
@@ -32,5 +32,4 @@ for torrent in json_obj:
     if finished_parse != -1:
         match = torrent[0].strip("'")
     if match != None:
-        remove = opener.open("http://localhost:" + port + "/gui/?action=remove&hash=" + match)
- 
+        remove = opener.open("http://localhost:" + str(port) + "/gui/?action=remove&hash=" + match)
